@@ -1,6 +1,6 @@
 # Compressarr Announcements
 
-Short news items from the [Compressarr](https://github.com/MrWizardCT/Compressarr) project: upcoming changes, beta releases,
+Short news items from the [Compressarr](https://github.com/Compressarr/Compressarr) project: upcoming changes, beta releases,
 catalog releases, things worth knowing. Compressarr reads one file from this repository, `announcements.json`, and lights a small
 bell in its top bar when there is a message from the last 30 days you have not seen.
 
@@ -26,7 +26,7 @@ bell in its top bar when there is a message from the last 30 days you have not s
   "kind": "beta",
   "title": "Compressarr 2.2.0-beta.6 is out",
   "text": "Adds the preset catalog, the ffmpeg download channel and HDR guards. Beta builds are optional.",
-  "link": "https://github.com/MrWizardCT/Compressarr/releases/tag/v2.2.0-beta.6",
+  "link": "https://github.com/Compressarr/Compressarr/releases/tag/v2.2.0-beta.6",
   "important": false,
   "minAppVersion": null,
   "maxAppVersion": "2.2.0-beta.5",
@@ -41,7 +41,7 @@ bell in its top bar when there is a message from the last 30 days you have not s
 | `title` | Required. Plain text, up to 120 characters |
 | `text` | Optional. Plain text, up to 1,000 characters |
 | `kind` | `release`, `beta`, `catalog` or `notice`. Shown as a small label |
-| `link` | Optional. `https` to `github.com/MrWizardCT/...` or `compressarr.tv` |
+| `link` | Optional. `https` to `github.com/Compressarr/...` or `compressarr.tv` (`github.com/MrWizardCT/...`, where the project used to live, is also accepted) |
 | `important` | Optional. Listed first. It does not change how the bell behaves |
 | `minAppVersion`, `maxAppVersion` | Optional, inclusive. Only versions in range see it. A pre-release is below its release: `2.2.0-beta.5` < `2.2.0` |
 | `expires` | Optional. `yyyy-mm-dd`. Hidden after that date |

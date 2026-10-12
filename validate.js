@@ -13,12 +13,14 @@ const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const VERSION = /^\d+(\.\d+){1,3}(-[0-9A-Za-z.-]+)?$/;
 
 // Links must be https and point at the Compressarr GitHub page or compressarr.tv - anything else is shown as plain text by the app.
+// github.com/MrWizardCT (where the project used to live) is still accepted by the app, so old messages keep their links.
+const GITHUB_OWNERS = ['Compressarr', 'MrWizardCT'];
 function linkAllowed(text) {
   let url;
   try { url = new URL(text); } catch { return false; }
   if (url.protocol !== 'https:') return false;
   const host = url.hostname.toLowerCase();
-  if (host === 'github.com') return url.pathname === '/MrWizardCT' || url.pathname.startsWith('/MrWizardCT/');
+  if (host === 'github.com') return GITHUB_OWNERS.some(owner => url.pathname === '/' + owner || url.pathname.startsWith('/' + owner + '/'));
   return host === 'compressarr.tv' || host.endsWith('.compressarr.tv');
 }
 
@@ -52,7 +54,7 @@ items.forEach((a, i) => {
   if (a.kind !== undefined && !KINDS.includes(a.kind)) bad(`${where}: "kind" must be one of ${KINDS.join(', ')}`);
   if (typeof a.title === 'string' && a.title.length > LIMITS.title) bad(`${where}: title is longer than ${LIMITS.title}`);
   if (a.text !== undefined && (typeof a.text !== 'string' || a.text.length > LIMITS.text)) bad(`${where}: "text" must be a string of at most ${LIMITS.text} characters`);
-  if (a.link != null && !linkAllowed(a.link)) bad(`${where}: "link" must be https to github.com/MrWizardCT/... or compressarr.tv`);
+  if (a.link != null && !linkAllowed(a.link)) bad(`${where}: "link" must be https to github.com/Compressarr/... or compressarr.tv`);
   if (a.expires != null && !DATE.test(a.expires)) bad(`${where}: "expires" must look like 2026-10-11`);
   for (const key of ['minAppVersion', 'maxAppVersion']) if (a[key] != null && !VERSION.test(a[key])) bad(`${where}: "${key}" must look like 2.2.0 or 2.2.0-beta.5`);
   if (a.important !== undefined && typeof a.important !== 'boolean') bad(`${where}: "important" must be true or false`);
