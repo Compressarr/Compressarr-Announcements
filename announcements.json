@@ -1,5 +1,18 @@
 {
   "schema": 1,
-  "updated": "2026-10-11",
-  "announcements": []
+  "updated": "2026-10-12",
+  "announcements": [
+    {
+      "id": "2026-10-welcome",
+      "date": "2026-10-12",
+      "kind": "notice",
+      "title": "Welcome to Compressarr!",
+      "text": "Important announcements about Compressarr will be posted here. These announcements will be kept to an absolute minimum. Thank you for trying Compressarr.",
+      "link": null,
+      "important": false,
+      "minAppVersion": null,
+      "maxAppVersion": null,
+      "expires": null
+    }
+  ]
 }
