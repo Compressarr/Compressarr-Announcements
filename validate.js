@@ -58,6 +58,7 @@ items.forEach((a, i) => {
   if (a.expires != null && !DATE.test(a.expires)) bad(`${where}: "expires" must look like 2026-10-11`);
   for (const key of ['minAppVersion', 'maxAppVersion']) if (a[key] != null && !VERSION.test(a[key])) bad(`${where}: "${key}" must look like 2.2.0 or 2.2.0-beta.5`);
   if (a.important !== undefined && typeof a.important !== 'boolean') bad(`${where}: "important" must be true or false`);
+  if (a.welcome !== undefined && typeof a.welcome !== 'boolean') bad(`${where}: "welcome" must be true or false`);
   if (/[<>]/.test(`${a.title || ''}${a.text || ''}`)) bad(`${where}: "<" and ">" are shown as plain text; avoid them`);
 });
 

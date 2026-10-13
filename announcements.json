@@ -10,6 +10,7 @@
       "text": "Important announcements about Compressarr will be posted here. These announcements will be kept to an absolute minimum. Thank you for trying Compressarr.",
       "link": null,
       "important": false,
+      "welcome": true,
       "minAppVersion": null,
       "maxAppVersion": null,
       "expires": null

@@ -43,6 +43,7 @@ bell in its top bar when there is a message from the last 30 days you have not s
 | `kind` | `release`, `beta`, `catalog` or `notice`. Shown as a small label |
 | `link` | Optional. `https` to `github.com/Compressarr/...` or `compressarr.tv` (`github.com/MrWizardCT/...`, where the project used to live, is also accepted) |
 | `important` | Optional. Listed first. It does not change how the bell behaves |
+| `welcome` | Optional. Marks the welcome message: an install that has not read it yet shows it as new once, whenever it was posted, and it is not dropped after 30 days while unread. Only the newest message marked welcome counts. Use it for one message, not a series |
 | `minAppVersion`, `maxAppVersion` | Optional, inclusive. Only versions in range see it. A pre-release is below its release: `2.2.0-beta.5` < `2.2.0` |
 | `expires` | Optional. `yyyy-mm-dd`. Hidden after that date |
 
